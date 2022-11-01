@@ -1,0 +1,4 @@
+Nama : Tyan
+Nilai Rata-Rata : 92.333336
+Grade : A
+Hasil : Lulus

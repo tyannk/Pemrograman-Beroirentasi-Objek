@@ -5,6 +5,8 @@
  */
 package PenentuNilaiMahasiswa;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import javax.swing.JOptionPane;
 
 /**
@@ -48,7 +50,7 @@ public class PenentuNilaiMahasiswaUI extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
+        tombolKeluar = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -194,10 +196,10 @@ public class PenentuNilaiMahasiswaUI extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton4.setText("Keluar");
-        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+        tombolKeluar.setText("Keluar");
+        tombolKeluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton4ActionPerformed(evt);
+                tombolKeluarActionPerformed(evt);
             }
         });
 
@@ -213,7 +215,7 @@ public class PenentuNilaiMahasiswaUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToggleButton4)
+                .addComponent(tombolKeluar)
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -224,7 +226,7 @@ public class PenentuNilaiMahasiswaUI extends javax.swing.JFrame {
                     .addComponent(jToggleButton1)
                     .addComponent(jToggleButton2)
                     .addComponent(jToggleButton3)
-                    .addComponent(jToggleButton4))
+                    .addComponent(tombolKeluar))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -320,16 +322,23 @@ public class PenentuNilaiMahasiswaUI extends javax.swing.JFrame {
                             jLabel8.getText();
             out.write(hasil);
             
-            JOptionPane.showmessageDialog(null, "Berhasil Disimpan dalam File");
+            JOptionPane.showMessageDialog(null, "Berhasil Disimpan dalam File");
             out.close();
         }catch (Exception e){
             System.err.println("Error: " + e.getMessage());
         }
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
-    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton4ActionPerformed
+    private void tombolKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tombolKeluarActionPerformed
+        int reply = JOptionPane.showConfirmDialog(
+                null,
+                "Yakin Mau Keluar?",
+                "Konfirmasi Keluar Aplikasi",
+                JOptionPane.YES_NO_OPTION);
+        if (reply == JOptionPane.YES_OPTION){
+                System.exit(0);
+        }
+    }//GEN-LAST:event_tombolKeluarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -386,6 +395,6 @@ public class PenentuNilaiMahasiswaUI extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToggleButton tombolKeluar;
     // End of variables declaration//GEN-END:variables
 }
